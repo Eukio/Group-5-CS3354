@@ -16,4 +16,4 @@ function Create_Post(header, description){
     }
     return false;    
 }
-module.exports = Create_Post;
+export default Create_Post;
