@@ -1,4 +1,4 @@
-const Create_Post = require('./Create_Post.js').default;
+const Create_Post = require('./Create_Post.js');
 
 
 test('Valid Post', () => {

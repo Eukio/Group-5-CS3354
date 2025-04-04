@@ -1,4 +1,10 @@
 function Create_Post(header, description){
+    if(header.constructor !== String){
+        return "Header must be a string";
+    }
+    if(description.constructor !== String){
+        return "Description must be a string";
+    }
     if (header.length > 0 && header.length <= 50 && description.length >= 25 && description.length <= 500){
         return true;
     }
@@ -16,4 +22,4 @@ function Create_Post(header, description){
     }
     return false;    
 }
-export default Create_Post;
+module.exports = Create_Post;
