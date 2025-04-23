@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/register.css';
 import utdLogo from '../assets/utd-logo1.png';
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"; // Import updateProfile
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db } from '../firebase';
 import { useNavigate, Link } from 'react-router-dom';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
@@ -93,7 +93,7 @@ function Register() {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Create a password"
               required
-              minLength={6} // Example minimum password length
+              minLength={6} // minimum password length
             />
           </div>
           <div className="input-group">
