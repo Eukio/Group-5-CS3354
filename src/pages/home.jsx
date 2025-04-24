@@ -12,23 +12,15 @@ function Home() {
     return (
         <>
             <h1>Home Page</h1>
-            <button onClick={handleClick1} className="create-club"> My Club </button>
+            <button onClick={handleClick1} className="my-club"> My Club </button>
              <button onClick={handleClick2} className="create-post"> Create Post </button>
              <br />
               <br />
               <br />
-
-                         <br />
-                         <br />
-                         <br />
-                         <br />
-                         <br />
-                         <br />
-                         <br />
-                         <br />
-                         <br />
-                         <br />
-                         <br />
+              <br />
+              <br />
+              <br />
+              <br />
         </>
     );
 }
