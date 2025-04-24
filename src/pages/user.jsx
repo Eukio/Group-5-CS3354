@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../styles/user.css";
-
+import { AuthContext } from '../context/AuthContext';
 function User() {
     const navigate = useNavigate();
+    const { currentUser } = useContext(AuthContext);
     const handleClick1 = () => {
         navigate('/login');
     };
@@ -14,7 +15,7 @@ function User() {
                   < i class="fa-solid fa-user"></i>
                 </div>
                 <div class="profile">
-                   <p><strong>Name:</strong> April Smith</p>
+                   <p><strong>Name:</strong> {currentUser?.displayName || 'User'}</p>
                    <p><strong>Email ID:</strong> yourcontact@utdallas.edu</p>
                 </div>
             </div>
