@@ -1,40 +1,54 @@
 import './App.css';
+
 import Login from './pages/login';
 import Home from './pages/home';
 import Register from './pages/register';
-import CreateClub from './pages/CreateClub';
-import CreatePost from './pages/CreatePost';
-import CreateEvent from './pages/CreateEvent';
+import CreateClub from './pages/createClub';
+import ClubDetails from './pages/clubDetails';
+import ClubsPage from './pages/clubsPage';
+import User from './pages/user';
 
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Header from './components/header';
+import Footer from './components/footer';
+
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
 
-function App() {
+function RequireAuth({ children }) {
   const { currentUser } = useContext(AuthContext);
+  return currentUser ? children : <Navigate to="/login" />;
+}
 
-  const RequireAuth = ({ children }) => {
-    return currentUser ? children : <Navigate to="/login" />;
-  };
-
-  console.log(currentUser);
+function AppContent() {
+  const location = useLocation();
+  const hideHeaderFooter = location.pathname === '/login' || location.pathname === '/register';
 
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<RequireAuth><Home /></RequireAuth>} />
-          <Route path='/home' element={<RequireAuth><Home /></RequireAuth>} />
-          <Route path='/create-club' element={<RequireAuth><CreateClub /></RequireAuth>} />
-          <Route path='/create-post' element={<RequireAuth><CreatePost /></RequireAuth>} />
-          <Route path='/create-event' element={<RequireAuth><CreateEvent /></RequireAuth>} />
-          
-          {/* Public routes */}
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <>
+      {!hideHeaderFooter && <Header />}
+
+      <Routes>
+        <Route path="/" element={<RequireAuth><ClubsPage /></RequireAuth>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/home" element={<RequireAuth><Home /></RequireAuth>} />
+        <Route path="/createClub" element={<RequireAuth><CreateClub /></RequireAuth>} />
+        <Route path="/clubs" element={<RequireAuth><ClubsPage /></RequireAuth>} />
+        <Route path="/club/:id" element={<RequireAuth><ClubDetails /></RequireAuth>} />
+        <Route path="/user" element={<RequireAuth><User /></RequireAuth>} />
+      </Routes>
+
+      {!hideHeaderFooter && <Footer />}
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }
 

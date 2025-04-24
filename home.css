@@ -1,12 +1,23 @@
 .home-page {
-    font-family: 'Segoe UI', sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #fff;
-  }
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fff;
+  justify-content: space-between;
+  overflow: visible; 
+  z-index: 0; 
+}
+
+.banner {
+  position: relative;
+  text-align: center;
+  background-color: #f0f4ff;
+  padding: 0;
+  z-index: 0; 
+}
   
-  .header {
+  /* .header {
     background-color: #e66b00;
     color: white;
     display: flex;
@@ -15,12 +26,12 @@
     padding: 12px 24px;
     flex-wrap: wrap;
   }
-  
-  .logo-section {
+   */
+  /* .logo-section {
     display: flex;
     align-items: center;
     gap: 10px;
-  }
+  } */
   
   .title {
     font-weight: bold;
@@ -31,12 +42,12 @@
     height: 50px;
   }
   
-  .search-section {
+  /* .search-section {
     display: flex;
     align-items: center;
     gap: 12px;
     margin-top: 10px;
-  }
+  } */
   
   .search-input {
     padding: 8px 14px;
@@ -55,10 +66,13 @@
     text-align: center;
     background-color: #f0f4ff;
     padding: 0;
+    z-index: 0; 
   }
   
   .banner-content {
     position: relative;
+    z-index: 0; 
+
   }
   
   .banner-image {
@@ -66,6 +80,8 @@
     max-height: 280px;
     object-fit: cover;
     border-radius: 8px;
+    z-index: 0; 
+
   }
   
   .banner-content h1 {
