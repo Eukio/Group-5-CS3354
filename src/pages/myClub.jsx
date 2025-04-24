@@ -2,15 +2,20 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../styles/myClub.css";
 function MyClub() {
-        const navigate = useNavigate();
-        const handleClick1 = () => {
-                navigate('/createclub');
-        };
-
+    const navigate = useNavigate();
+    const handleClick1 = () => {
+        navigate('/createClub');
+    };
+    const handleClick2 = () => {
+        navigate('/editClub');
+    };
+    const handleClick3 = () => {
+        navigate('/deleteClub');
+    };
     return (
         <div className="page">
             <div className="main-heading">
-                <h1>MY CLUBS</h1>
+                <h1>My Clubs</h1>
             </div>
             <div className="joined-clubs">
                 <div className="heading-club">
@@ -24,21 +29,8 @@ function MyClub() {
                <div className="group"> Women Networking </div>
             </div>
             <button onClick={handleClick1} className="create-club"> Create Club </button>
-             <br />
-              <br />
-              <br />
-
-                         <br />
-                         <br />
-                         <br />
-                         <br />
-                         <br />
-                         <br />
-                         <br />
-                         <br />
-                         <br />
-                         <br />
-                         <br />
+            <button onClick={handleClick2} className="edit-club"> Edit Club </button>
+            <button onClick={handleClick3} className="delete-club"> Delete Club </button>
         </div>
     );
 }

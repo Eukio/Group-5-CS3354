@@ -5,10 +5,11 @@
 }
 .main-heading {
   color: #000000;
+  text-decoration: underline;
   text-align: left;
   font-family: "Inter-Bold", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 800;
   position: relative;
   left: 4.43%;
   top: 0px;
@@ -24,14 +25,14 @@
   color: #000000;
   text-align: left;
   font-family: "Inter-Bold", sans-serif;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 700;
   position: relative;
   left: 4.43%;
   top: 0px;
   width: 386px;
   height: 44px;
-  margin-bottom: 30px;
+  margin-bottom: 1%;
 }
 .group {
   position: relative;
@@ -51,7 +52,7 @@
   font-size: 16px;
   border: 2px solid black;
 }
-.sign-out {
+.create-club {
  left: 85.43%;
   background-color: #006400; /* Light green */
   color: white;            /* Dark blue text */
