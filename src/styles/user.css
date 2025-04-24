@@ -1,0 +1,31 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 50px; /* space between icon and text */
+  font-weight: 500;
+  cursor: pointer;
+}
+.avatar {
+  color: #191970;
+    position: relative;
+    right: 92.32%;
+    left: 4.43%;
+    bottom: 77.2%;
+    top: 19.33%;
+    font-size: 2rem;
+    overflow: visible;
+}
+
+.profile {
+  flex: 1;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  padding: 30px 40px;
+  font-size: 16px;
+  position: relative;
+}
