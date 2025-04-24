@@ -73,6 +73,7 @@
     position: relative;
     z-index: 0; 
 
+<<<<<<< Updated upstream
   }
   
   .banner-image {
@@ -141,3 +142,220 @@
     padding: 10px 0;
   }
   
+=======
+.rectangle-10 {
+  background: rgba(14, 75, 59, 0.55);
+  border-radius: 15px;
+  width: 1270px;
+  height: 313px;
+  position: absolute;
+  left: 0px;
+  top: 208px;
+}
+.welcome-april-smith {
+  color: #ffffff;
+  text-align: center;
+  font-family: "NotoSansTeluguUi-Bold", sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  position: absolute;
+  left: 0px;
+  top: 208px;
+  width: 1280px;
+  height: 313px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.utd-atec-1024-x-576 {
+  border-radius: 0px;
+  width: 264px;
+  height: 256px;
+  position: absolute;
+  left: 932px;
+  top: 550px;
+  overflow: visible;
+  object-fit: cover;
+}
+.rectangle-13 {
+  background: rgba(14, 75, 59, 0.45);
+  border-radius: 20px;
+  width: 264px;
+  height: 256px;
+  position: absolute;
+  left: 932px;
+  top: 550px;
+}
+.group-2 {
+  position: absolute;
+  inset: 0;
+}
+.utd-sciences-02 {
+  border-radius: 0px;
+  width: 264px;
+  height: 256px;
+  position: absolute;
+  left: 82px;
+  top: 550px;
+  overflow: visible;
+  object-fit: cover;
+}
+.rectangle-12 {
+  background: rgba(14, 75, 59, 0.45);
+  border-radius: 20px;
+  width: 264px;
+  height: 256px;
+  position: absolute;
+  left: 83px;
+  top: 550px;
+}
+.button {
+  width: 162px;
+  height: 34px;
+  position: absolute;
+  left: 134px;
+  top: 717px;
+  box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.text-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+}
+.rectangle-8 {
+  background: #0e4b3b;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+}
+.login {
+  color: #f5f5f5;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  width: 100%;
+  bottom: 0%;
+  top: 0%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.create-club {
+  color: #ffffff;
+  text-align: center;
+  font-family: "NotoSansTeluguUi-ExtraBold", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  position: absolute;
+  left: 144px;
+  top: 603px;
+  width: 139px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group-4 {
+  position: absolute;
+  inset: 0;
+}
+.utd-live-learn-community-0 {
+  border-radius: 0px;
+  width: 264px;
+  height: 256px;
+  position: absolute;
+  left: 519px;
+  top: 550px;
+  overflow: visible;
+  object-fit: cover;
+}
+.rectangle-11 {
+  background: rgba(14, 75, 59, 0.45);
+  border-radius: 20px;
+  width: 264px;
+  height: 256px;
+  position: absolute;
+  left: 519px;
+  top: 550px;
+}
+.create-a-post {
+  color: #ffffff;
+  text-align: center;
+  font-family: "NotoSansTeluguUi-ExtraBold", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  position: absolute;
+  left: 581px;
+  top: 601px;
+  width: 139px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button2 {
+  width: 162px;
+  height: 34px;
+  position: absolute;
+  left: 570px;
+  top: 717px;
+  box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.group-3 {
+  position: absolute;
+  inset: 0;
+}
+.image {
+  width: 235px;
+  height: 224px;
+  position: absolute;
+  left: 946px;
+  top: 566px;
+}
+.create-an-event {
+  color: #ffffff;
+  text-align: center;
+  font-family: "NotoSansTeluguUi-ExtraBold", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  position: absolute;
+  left: 955px;
+  top: 586px;
+  width: 226px;
+  height: 138px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button3 {
+  width: 162px;
+  height: 34px;
+  position: absolute;
+  left: 987px;
+  top: 717px;
+  box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.user {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  left: 1202px;
+  top: 32px;
+  overflow: visible;
+}
+>>>>>>> Stashed changes
