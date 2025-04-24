@@ -1,0 +1,14 @@
+.create-post-heading {
+  color: #000000;
+  text-decoration: underline;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  position: relative;
+  left: 4.43%;
+  top: 0px;
+  width: 386px;
+  height: 44px;
+  margin-bottom: 4%;
+}

@@ -5,11 +5,13 @@ import React from 'react';
  function CreatePost() {
      const navigate = useNavigate();
      const handleClick1 = () => {
-         navigate('/login');
+         navigate('/home');
      };
      return (
          <div className="page">
-             <h1> CreatePost </h1>
+             <div className="create-post-heading">
+                 <h1>Create Post</h1>
+             </div>
 
          </div>
      );
