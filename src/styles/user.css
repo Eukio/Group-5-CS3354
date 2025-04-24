@@ -6,7 +6,7 @@
 .profile-container {
   display: flex;
   align-items: center;
-  gap: 50px; /* space between icon and text */
+  gap: 5%; /* space between icon and text */
   font-weight: 500;
   cursor: pointer;
 }
@@ -66,8 +66,8 @@
 }
 .sign-out {
  left: 85.43%;
-  background-color: #90EE90; /* Light green */
-  color: #003153;            /* Dark blue text */
+  background-color: #006400; /* Light green */
+  color: white;            /* Dark blue text */
   padding: 10px 15px;
   margin-bottom: 30px;
   margin-top: 30px;
@@ -76,7 +76,7 @@
   width: 145px;
   height: 41px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border: 2px solid #006400; /* Dark green border */
+  border: 2px solid black; /* Dark green border */
   position: relative;
   text-align: center;
   font-family: "Inter-Regular", sans-serif;
