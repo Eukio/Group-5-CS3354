@@ -1,0 +1,7 @@
+    <div className="text-container">
+                        <div className="text">
+                            <p>E-sports Club</p>
+                        </div>
+                    </div>
+                    <div className="text">
+                    </div>
