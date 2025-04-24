@@ -19,7 +19,7 @@ function User() {
                 </div>
             </div>
             <div className="joined-clubs">
-                <p><Strong>Group Leader </strong></p>
+                <p><strong>Group Leader </strong></p>
 
             </div>
             <button onClick={handleClick1} className="sign-out"> Sign out </button>
