@@ -3,7 +3,9 @@ import Login from './pages/login';
 import Home from './pages/home';
 import Register from './pages/register';
 import CreateClub from './pages/createClub';
+import CreatePost from './pages/createPost';
 import ClubDetails from './pages/clubDetails';
+import MyClub from './pages/myClub';
 import User from './pages/user';
 import Header from './components/header';
 import Footer from './components/footer';
@@ -33,8 +35,11 @@ function AppContent() {
         <Route path="/register" element={<Register />} />
         <Route path="/club/:id" element={<ClubDetails />} />
         <Route path="/user" element={<User />} />
+        <Route path="/createClub" element={<CreateClub />} />
+        <Route path="/createPost" element={<CreatePost />} />
+        <Route path="/myClub" element={<MyClub />} />
         <Route path="/home" element={<RequireAuth><Home /></RequireAuth>} />
-        <Route path="/createClub" element={<RequireAuth><CreateClub /></RequireAuth>} />
+
       </Routes>
 
       {!hideHeaderFooter && <Footer />}

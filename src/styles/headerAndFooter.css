@@ -65,7 +65,7 @@
     font-size: 1.5rem;
     cursor: pointer;
   }
-  
+
   .footer {
     background-color: #e97200;
     color: white;
@@ -74,7 +74,7 @@
     font-size: 0.9rem;
     position: sticky;
     bottom: 0%;
-    top: 100%
+    top: 100%;
   }
   .search-bar {
     position: relative;
