@@ -68,8 +68,9 @@
     text-align: center;
     padding: 1vh;
     font-size: 0.9rem;
-    position: relative;
-    bottom: 0;
+    position: sticky;
+    bottom: 0%;
+    top:100%;
   }
   .search-bar {
     position: relative;
