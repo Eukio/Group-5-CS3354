@@ -1,12 +1,13 @@
 .header {
-    background-color: #e97200;
-    color: white;
-    padding: 3vh 2vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-  }
+  background-color: #e97200;
+  color: white;
+  padding: 3vh 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1; 
+}
   
   /* Wrap left and right content in their own flex boxes */
   .header .left-section,
@@ -67,6 +68,39 @@
     text-align: center;
     padding: 1vh;
     font-size: 0.9rem;
-    position: relative;
-    bottom: 0;
+    position: sticky;
+    bottom: 0%;
+    top:100%;
   }
+  .search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .dropdown-results {
+    position: absolute;
+    top: 100%;
+    left: 30px;
+    right: 0;
+    background-color: #e97200;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .utd-logo {
+    height: 50px;
+  }
+  
