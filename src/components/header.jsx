@@ -8,8 +8,10 @@ export default function Header() {
     <div class="header">
         <div class="left-section">
         <div class="title">UTD BULLETIN BOARD</div>
-        <img src={utdLogo} class="logo" alt="UTD Logo" />
+          <img src={utdLogo} alt="UTD Logo" className="utd-logo" />
     </div>
+
+    
    <SearchBar/>
     <div class="icons">
         <div className="icon">
@@ -26,3 +28,17 @@ export default function Header() {
     </div>
   )
 }
+/*
+ <header className="header">
+        <div className="logo-section">
+          <span className="title">UTD BULLETIN BOARD</span>
+          <img src={utdLogo} alt="UTD Logo" className="utd-logo" />
+        </div>
+        <div className="search-section">
+          <input type="text" placeholder="Enter Club Name" className="search-input" />
+          <img src={searchIcon} alt="Search" className="icon" />
+          <img src={userIcon} alt="User" className="icon" />
+        </div>
+      </header>
+
+*/

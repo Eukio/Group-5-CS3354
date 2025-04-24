@@ -31,6 +31,7 @@ function AppContent() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/club/:id" element={<ClubDetails />} /> 
+    
         <Route path="/home" element={<RequireAuth><Home /></RequireAuth>} />
         <Route path="/createClub" element={<RequireAuth><CreateClub /></RequireAuth>} />
       </Routes>
