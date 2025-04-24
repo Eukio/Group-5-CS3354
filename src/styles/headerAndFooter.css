@@ -73,7 +73,8 @@
     padding: 1vh;
     font-size: 0.9rem;
     position: sticky;
-    bottom: 0;
+    bottom: 0%;
+    top: 100%
   }
   .search-bar {
     position: relative;
