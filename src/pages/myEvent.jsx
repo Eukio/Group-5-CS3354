@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../styles/myEvent.css";
-function MyClub() {
+function MyEvent() {
     const navigate = useNavigate();
     const handleClick1 = () => {
         navigate('/createEvent');
@@ -28,4 +28,4 @@ function MyClub() {
     );
 }
 
-export default MyClub;
+export default MyEvent;
