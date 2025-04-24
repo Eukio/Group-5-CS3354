@@ -29,9 +29,7 @@ function User() {
                 <div className="group"> CS AI Club </div>
                 <div className="group"> Women Networking </div>
             </div>
-
             <button onClick={handleClick1} className="sign-out"> Sign out </button>
-
         </div>
     );
 }
