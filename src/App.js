@@ -4,7 +4,11 @@ import Home from './pages/home';
 import Register from './pages/register';
 import CreateClub from './pages/createClub';
 import ClubDetails from './pages/clubDetails';
+
+import ClubsPage from './pages/clubsPage';
+
 import User from './pages/user';
+
 import Header from './components/header';
 import Footer from './components/footer';
 
@@ -28,7 +32,8 @@ function AppContent() {
       {!hideHeaderFooter && <Header />}
 
       <Routes>
-        <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
+        {/*<Route path="/" element={<RequireAuth><Home /></RequireAuth>} />*/}
+        <Route path="/" element={<RequireAuth><ClubsPage /></RequireAuth>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/club/:id" element={<ClubDetails />} />
