@@ -53,7 +53,43 @@
   border: 2px solid black;
 }
 .create-club {
- left: 85.43%;
+  left: 5%;
+  background-color: #006400; /* Light green */
+  color: white;            /* Dark blue text */
+  padding: 10px 15px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  border-radius: 12px;
+  font-weight: bold;
+  width: 145px;
+  height: 41px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 2px solid black; /* Dark green border */
+  position: relative;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 16px;
+}
+.edit-club {
+  left: 35%;
+  background-color: #006400; /* Light green */
+  color: white;            /* Dark blue text */
+  padding: 10px 15px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  border-radius: 12px;
+  font-weight: bold;
+  width: 145px;
+  height: 41px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 2px solid black; /* Dark green border */
+  position: relative;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 16px;
+}
+.delete-club {
+  left: 65%;
   background-color: #006400; /* Light green */
   color: white;            /* Dark blue text */
   padding: 10px 15px;
