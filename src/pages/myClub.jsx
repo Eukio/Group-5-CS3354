@@ -22,6 +22,7 @@ function MyClub() {
                     <p><strong> Group Leader </strong></p>
                 </div>
                 <div className="group"> E-Sports Club </div>
+                <div className="group"> Rock Climbing Club </div>
                <div className="heading-club">
                    <p><strong> Group Member </strong></p>
                </div>
