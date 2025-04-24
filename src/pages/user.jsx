@@ -19,12 +19,16 @@ function User() {
                 </div>
             </div>
             <div className="joined-clubs">
-                <div className="group-leader">
-                   <p><strong>Group Leader </strong></p>
+                <div className="heading">
+                   <p><strong> Group Leader </strong></p>
                 </div>
                 <div className="group"> E-Sports Club </div>
+                <div className="heading">
+                    <p><strong> Group Member </strong></p>
+                </div>
+                <div className="group"> CS AI Club </div>
+                <div className="group"> Women Networking </div>
             </div>
-
 
             <button onClick={handleClick1} className="sign-out"> Sign out </button>
 
