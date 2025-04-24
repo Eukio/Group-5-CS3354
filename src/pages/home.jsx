@@ -1,16 +1,12 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/home.css';
-
 import { AuthContext } from '../context/AuthContext';
-
-import utdLogo from '../assets/utdLogo.png';
 import banner from '../assets/banner.png';
 import createClub from '../assets/createClub.svg';
 import createPost from '../assets/createPost.svg';
 import createEvent from '../assets/createEvent.svg';
-import userIcon from '../assets/userIcon.svg';
-import searchIcon from '../assets/searchIcon.svg';
+
 
 function Home() {
   const navigate = useNavigate();
