@@ -1,5 +1,5 @@
 .header {
-  background-color: #e97200;
+  background-color: #e86c00;
   color: white;
   padding: 3vh 2vw;
   display: flex;
@@ -63,7 +63,7 @@
   }
   
   .footer {
-    background-color: #e97200;
+    background-color: #e86c00;
     color: white;
     text-align: center;
     padding: 1vh;
@@ -84,7 +84,7 @@
     top: 100%;
     left: 30px;
     right: 0;
-    background-color: #e97200;
+    background-color: #e86c00;
     border: 1px solid #ccc;
     border-radius: 4px;
     max-height: 200px;
