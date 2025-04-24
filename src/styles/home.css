@@ -9,15 +9,8 @@
   z-index: 0; 
 }
 
-.banner {
-  position: relative;
-  text-align: center;
-  background-color: #f0f4ff;
-  padding: 0;
-  z-index: 0; 
-}
   
-  /* .header {
+   .header {
     background-color: #e66b00;
     color: white;
     display: flex;
@@ -26,35 +19,30 @@
     padding: 12px 24px;
     flex-wrap: wrap;
   }
-   */
-  /* .logo-section {
+   
+   .logo-section {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 10px;
-  } */
+  } 
   
   .title {
     font-weight: bold;
     font-size: 22px;
   }
   
+  
   .utd-logo {
-    height: 50px;
+    position: relative;
+    height: 100px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
   }
   
-  /* .search-section {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 10px;
-  } */
-  
-  .search-input {
-    padding: 8px 14px;
-    border-radius: 20px;
-    border: none;
-    width: 220px;
-  }
+
+
   
   .icon {
     height: 28px;
