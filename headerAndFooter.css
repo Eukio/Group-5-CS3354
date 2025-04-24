@@ -1,0 +1,106 @@
+.header {
+  background-color: #e97200;
+  color: white;
+  padding: 3vh 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1; 
+}
+  
+  /* Wrap left and right content in their own flex boxes */
+  .header .left-section,
+  .header .right-section {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+  }
+  
+  .header .logo {
+    height: 5vh;
+  }
+  
+  .header .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .header .search-bar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40vw;
+    padding: 0.5vh 1vw;
+  }
+
+  .header .header-button {
+    color: white;
+    text-decoration: none;
+  }
+
+  .header .header-button:hover {
+    text-shadow: 0 0 8px rgba(66, 66, 66, 0.8);
+  }
+  
+  .header input[type="text"] {
+    width: 100%;
+    padding: 0.5em 1em;
+    border-radius: 2em;
+    border: none;
+    font-size: 1rem;
+  }
+  
+  .header .icons {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+  }
+
+  .header .icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .footer {
+    background-color: #e97200;
+    color: white;
+    text-align: center;
+    padding: 1vh;
+    font-size: 0.9rem;
+    position: sticky;
+    bottom: 0%;
+    top:100%;
+  }
+  .search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .dropdown-results {
+    position: absolute;
+    top: 100%;
+    left: 30px;
+    right: 0;
+    background-color: #e97200;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .utd-logo {
+    height: 50px;
+  }
+  
