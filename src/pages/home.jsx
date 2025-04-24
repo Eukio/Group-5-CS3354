@@ -35,7 +35,7 @@ function Home() {
         <div className="card">
           <img src={createEvent} alt="Create Event" />
           <h2>Create an Event</h2>
-          <button onClick={() => navigate('/createEvent')}>Create</button>
+          <button onClick={() => navigate('/myEvent')}>Create</button>
         </div>
       </section>
 

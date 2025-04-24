@@ -1,0 +1,85 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 5%; 
+  font-weight: 500;
+  cursor: pointer;
+}
+.avatar {
+  color: #191970;
+    position: relative;
+    right: 92.32%;
+    left: 4.43%;
+    bottom: 77.2%;
+    top: 19.33%;
+    font-size: 2rem;
+    overflow: visible;
+}
+
+.profile {
+  flex: 1;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  padding: 30px 40px;
+  font-size: 20px;
+  position: relative;
+}
+.joined-clubs {
+ margin-top: 30px;
+ left: 4.43%;
+}
+.heading {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+  left: 4.43%;
+  top: 0px;
+  width: 386px;
+  height: 44px;
+  margin-bottom: 30px;
+}
+.group {
+  position: relative;
+  inset: 0;
+  left: 4.43%;
+  background-color: white; 
+  color: black;           
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  width: 257px;
+  height: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 16px;
+  border: 2px solid black;
+}
+.sign-out {
+ left: 85.43%;
+  background-color: #006400; 
+  color: white;            
+  padding: 10px 15px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  border-radius: 12px;
+  font-weight: bold;
+  width: 145px;
+  height: 41px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 2px solid black; 
+  position: relative;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 16px;
+}
+
