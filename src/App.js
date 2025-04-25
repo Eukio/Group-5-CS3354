@@ -6,6 +6,7 @@ import CreateClub from './pages/createClub';
 import CreatePost from './pages/createPost';
 import ClubDetails from './pages/clubDetails';
 import MyClub from './pages/myClub';
+import MyPost from './pages/myPost';
 import ClubsPage from './pages/clubsPage';
 import PostPage from './pages/postPage';
 import MyEvent from './pages/myEvent';
@@ -44,6 +45,7 @@ function AppContent() {
         <Route path="/user" element={<User />} />
         <Route path="/myClub" element={<MyClub />} />
         <Route path="/myEvent" element={<MyEvent />} />
+        <Route path="/myPost" element={<MyPost />} />
         <Route path="/postPage" element={<PostPage />} />
         <Route path="/home" element={<RequireAuth><Home /></RequireAuth>} />
         <Route path="/createClub" element={<RequireAuth><CreateClub /></RequireAuth>} />
