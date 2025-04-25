@@ -65,7 +65,9 @@ const SearchBar = () => {
         value={queryText}
         onChange={handleInputChange} 
         onKeyDown={handleKeyDown}
+        className="search-input" 
       />
+
     
       {results.length > 0 && (
         <ul className="dropdown-results">
