@@ -1,17 +1,12 @@
 import './App.css';
+
 import Login from './pages/login';
 import Home from './pages/home';
 import Register from './pages/register';
 import CreateClub from './pages/createClub';
-import CreatePost from './pages/createPost';
 import ClubDetails from './pages/clubDetails';
-import MyClub from './pages/myClub';
-import MyPost from './pages/myPost';
 import ClubsPage from './pages/clubsPage';
-import PostPage from './pages/postPage';
-import MyEvent from './pages/myEvent';
-import CreateEvent from './pages/createEvent';
-
+import PostPage from './pages/postPage'; // <--- import PostPage here
 import User from './pages/user';
 
 import Header from './components/header';
@@ -28,8 +23,6 @@ function RequireAuth({ children }) {
 
 function AppContent() {
   const location = useLocation();
-
-  // Hide header and footer on login and register pages
   const hideHeaderFooter = location.pathname === '/login' || location.pathname === '/register';
 
   return (
@@ -37,20 +30,15 @@ function AppContent() {
       {!hideHeaderFooter && <Header />}
 
       <Routes>
-        <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
-        <Route path="/clubsPage" element={<RequireAuth><ClubsPage /></RequireAuth>} />
+        <Route path="/" element={<RequireAuth><ClubsPage /></RequireAuth>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/club/:id" element={<ClubDetails />} />
-        <Route path="/user" element={<User />} />
-        <Route path="/myClub" element={<MyClub />} />
-        <Route path="/myEvent" element={<MyEvent />} />
-        <Route path="/myPost" element={<MyPost />} />
-        <Route path="/postPage" element={<PostPage />} />
         <Route path="/home" element={<RequireAuth><Home /></RequireAuth>} />
         <Route path="/createClub" element={<RequireAuth><CreateClub /></RequireAuth>} />
-        <Route path="/createPost" element={<RequireAuth><CreatePost /></RequireAuth>} />
-        <Route path="/createEvent" element={<RequireAuth><CreateEvent /></RequireAuth>} />
+        <Route path="/clubs" element={<RequireAuth><ClubsPage /></RequireAuth>} />
+        <Route path="/posts" element={<RequireAuth><PostPage /></RequireAuth>} /> {/* <--- Added */}
+        <Route path="/club/:id" element={<RequireAuth><ClubDetails /></RequireAuth>} />
+        <Route path="/user" element={<RequireAuth><User /></RequireAuth>} />
       </Routes>
 
       {!hideHeaderFooter && <Footer />}
