@@ -1,111 +1,84 @@
+/* === Header Layout === */
 .header {
   background-color: #e97200;
   color: white;
-  padding: 3vh 2vw;
+  padding: 2vh 3vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
-  z-index: 1; 
 }
-  
-  /* Wrap left and right content in their own flex boxes */
-  .header .left-section,
-  .header .right-section {
-    display: flex;
-    align-items: center;
-    gap: 1vw;
-  }
-  
-  .header .logo {
-    height: 5vh;
-  }
-  
-  .header .title {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  
-  .header .search-bar {
-    position: absolute;
-    left: 50%;
-    transform: translateX(113%) translateY(-20%);
-    width: 40vw;
-    padding: 0.6vh 1vw;
-    
-  }
-  .search-input {
-    padding: 8px 14px;
-    border-radius: 20px;
-    border: none;
-    width: 220px;
-  }
-  .header .header-button {
-    color: white;
-    text-decoration: none;
-  }
 
-  .header .header-button:hover {
-    text-shadow: 0 0 8px rgba(66, 66, 66, 0.8);
-  }
-  
-  .header input[type="text"] {
-    padding: 0.5em 1em;
-    border-radius: 2em;
-    border: none;
-    font-size: 1rem;
-  }
-  
-  .header .icons {
-    display: flex;
-    align-items: center;
-    gap: 3vw;
-  }
+/* Left Section: Title */
+.left-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
 
-  .header .icon {
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
-  .footer {
-    background-color: #e86c00;
-    color: white;
-    text-align: center;
-    padding: 1vh;
-    font-size: 0.9rem;
-    position: sticky;
-    bottom: 0%;
-    top:100%;
-  }
-  .search-bar {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  .dropdown-results {
-    position: absolute;
-    top: 100%;
-    left: 30px;
-    right: 0;
-    background-color: #e97200;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    max-height: 200px;
-    overflow-y: auto;
-    z-index: 1000;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .dropdown-item {
-    padding: 10px;
-    cursor: pointer;
-    border-bottom: 1px solid #f0f0f0;
-  }
-  .utd-logo {
-    right : 5rem;
-  }
-  
+.title-link {
+  text-decoration: none;
+}
+
+.title-link .title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.title-link .title:hover {
+  text-decoration: underline;
+}
+
+/* Center Section: Logo */
+.center-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.utd-logo-centered {
+  height: 55px;
+  cursor: pointer;
+}
+
+/* Right Section: Search Bar + User Icon */
+.right-section {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-bar {
+  position: relative;
+  width: 200px;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.header-button {
+  text-decoration: none;
+}
+
+.header-button:hover {
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+}
+
+/* === Footer Styles === */
+.footer {
+  background-color: #e86c00;
+  color: white;
+  text-align: center;
+  padding: 1vh;
+  font-size: 0.9rem;
+  position: sticky;
+  bottom: 0%;
+  top: 100%;
+}

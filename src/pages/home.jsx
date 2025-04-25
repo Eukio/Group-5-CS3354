@@ -30,7 +30,7 @@ function Home() {
         <div className="card">
           <img src={createPost} alt="Create Post" />
           <h2>Create a Post</h2>
-          <button onClick={() => navigate('/createPost')}>Post</button>
+          <button onClick={() => navigate('/myPost')}>Post</button>
         </div>
         <div className="card">
           <img src={createEvent} alt="Create Event" />
