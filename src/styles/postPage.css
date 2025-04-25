@@ -14,3 +14,27 @@
   font-size: 36px;
   text-shadow: 2px 2px #000;
 }
+.all-posts{
+ margin-left: 4%;
+}
+.added-posts{
+ align-items: center;
+ justify-content: center;
+}
+.explore-button {
+  background-color: #006400;
+  color: white;
+  padding: 10px 15px;
+  margin-bottom: 4%;
+  margin-top: 2%;
+  border-radius: 12px;
+  font-weight: bold;
+  width: 145px;
+  height: 41px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 2px solid black;
+  position: relative;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 16px;
+}
