@@ -24,37 +24,37 @@ function PostPage() {
                     <div className="image-wrapper">
                         <img src={chess_post} alt="Post1" className="post-image" />
                       </div>
-                    <button onClick={handleClick1}> Explore </button>
+
                 </div>
                 <div className="added-post">
                     <div className="image-wrapper">
                         <img src={art_post} alt="Post2" className="post-image" />
                     </div>
-                    <button onClick={handleClick1}> Explore </button>
+
                 </div>
                 <div className="added-post">
                     <div className="image-wrapper">
                         <img src={debate_post} alt="Post3" className="post-image" />
                     </div>
-                    <button onClick={handleClick1}> Explore </button>
+
                 </div>
                 <div className="added-post">
                     <div className="image-wrapper">
                         <img src={eco_post} alt="Post2" className="post-image" />
                     </div>
-                    <button onClick={handleClick1}> Explore </button>
+
                 </div>
                 <div className="added-post">
                     <div className="image-wrapper">
                         <img src={stem_post} alt="Post2" className="post-image" />
                     </div>
-                    <button onClick={handleClick1}> Explore </button>
+
                     </div>
                 <div className="added-post">
                     <div className="image-wrapper">
                         <img src={women_post} alt="Post2" className="post-image" />
                     </div>
-                    <button onClick={handleClick1}> Explore </button>
+
                 </div>
             </div>
         </div>
@@ -62,3 +62,4 @@ function PostPage() {
 }
 
 export default PostPage;
+//<button onClick={handleClick1}> Explore </button>
