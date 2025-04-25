@@ -8,6 +8,7 @@ import ClubDetails from './pages/clubDetails';
 import MyClub from './pages/myClub';
 import ClubsPage from './pages/clubsPage';
 import MyEvent from './pages/myEvent';
+import CreateEvent from './pages/createEvent';
 
 import User from './pages/user';
 
@@ -45,6 +46,7 @@ function AppContent() {
         <Route path="/home" element={<RequireAuth><Home /></RequireAuth>} />
         <Route path="/createClub" element={<RequireAuth><CreateClub /></RequireAuth>} />
         <Route path="/createPost" element={<RequireAuth><CreatePost /></RequireAuth>} />
+        <Route path="/createEvent" element={<RequireAuth><CreateEvent /></RequireAuth>} />
       </Routes>
 
       {!hideHeaderFooter && <Footer />}
