@@ -16,6 +16,10 @@
 }
 .all-posts{
  margin-left: 4%;
+ display: flex;
+ gap: 4%;
+ flex-wrap: wrap;
+ padding: 40px 20px;
 }
 .added-post{
    display: flex;

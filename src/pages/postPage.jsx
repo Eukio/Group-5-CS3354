@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../styles/postPage.css";
 import chess_post from '../assets/chess-post.png';
-
+import art_post from '../assets/art-post.png';
 
 function PostPage() {
     const navigate = useNavigate();
@@ -18,8 +18,14 @@ function PostPage() {
             <div className="all-posts">
                 <div className="added-post">
                     <div className="image-wrapper">
-                        <img src={chess_post} alt="Post" className="post-image" />
+                        <img src={chess_post} alt="Post1" className="post-image" />
                       </div>
+                    <button onClick={handleClick1}> Explore </button>
+                </div>
+                <div className="added-post">
+                    <div className="image-wrapper">
+                        <img src={art_post} alt="Post2" className="post-image" />
+                    </div>
                     <button onClick={handleClick1}> Explore </button>
                 </div>
             </div>
