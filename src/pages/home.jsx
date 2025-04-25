@@ -17,7 +17,7 @@ function Home() {
      
 
       <section className="banner">
-        <h1>Welcome,<br />{currentUser?.displayName || 'User'}!</h1>
+        <h1>Welcome, {currentUser?.displayName || 'User'}!</h1>
         <img src={banner} alt="Campus" />
       </section>
 

@@ -1,8 +1,9 @@
 .page-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh; /* 100% of the viewport height */
 }
+
 .main-event-heading {
   color: #000000;
   text-decoration: underline;
@@ -12,81 +13,86 @@
   font-weight: 800;
   position: relative;
   left: 4.43%;
-  top: 0px;
-  width: 386px;
-  height: 44px;
-  margin-bottom: 4%;
+  top: 0; /* Reset top */
+  width: 90%; /* Adjust width as needed */
+  height: auto; /* Let height adjust */
+  margin-bottom: 2vh; /* Use viewport height units */
 }
+
 .joined-events {
- margin-top: 30px;
- left: 4.43%;
+  margin-top: 2vh;
+  left: 4.43%;
+  width: 90%; /* Match heading width */
+  flex: 1; /* Allow this to grow and take remaining space */
 }
+
 .my-event {
   position: relative;
   inset: 0;
-  left: 4.43%;
+  left: 0; /* Reset left */
   background-color: white;
   color: black;
-  padding: 10px 15px;
-  margin-bottom: 10px;
+  padding: 1vh 1vw; /* Use viewport units for padding */
+  margin-bottom: 1vh;
   font-weight: bold;
   text-align: left;
   font-family: "Inter-Regular", sans-serif;
-  font-size: 20px;
-
+  font-size: 1.2rem; /* Use rem or em for font size */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
+
+.event-details {
+  flex-grow: 1;
+  margin-bottom: 1vh;
+  padding-left: 4.5%;
+}
+
+.event-actions {
+  display: flex;
+  gap: 1vw;
+  flex-shrink: 0;
+  align-self: flex-start;
+  padding-left: 4.5%;
+}
+
 .create-event {
   left: 5%;
   background-color: #006400;
   color: white;
-  padding: 10px 15px;
-  margin-bottom: 30px;
-  margin-top: 30px;
-  border-radius: 12px;
+  padding: 1vh 1vw;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  border-radius: 0.6rem; /* Use rem or em */
   font-weight: bold;
-  width: 145px;
-  height: 41px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border: 2px solid black;
+  width: auto;
+  height: auto;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  border: 0.1rem solid black;
   position: relative;
   text-align: center;
   font-family: "Inter-Regular", sans-serif;
-  font-size: 16px;
-}
-.edit-event {
-  left: 35%;
-  background-color: #006400;
-  color: white;
-  padding: 10px 15px;
-  margin-bottom: 30px;
-  margin-top: 30px;
-  border-radius: 12px;
-  font-weight: bold;
-  width: 145px;
-  height: 41px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border: 2px solid black;
-  position: relative;
-  text-align: center;
-  font-family: "Inter-Regular", sans-serif;
-  font-size: 16px;
-}
-.delete-event {
-  left: 65%;
-  background-color: #006400;
-  color: white;
-  padding: 10px 15px;
-  margin-bottom: 30px;
-  margin-top: 30px;
-  border-radius: 12px;
-  font-weight: bold;
-  width: 145px;
-  height: 41px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border: 2px solid black;
-  position: relative;
-  text-align: center;
-  font-family: "Inter-Regular", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
+.edit-event,
+.delete-event {
+  background-color: #006400;
+  color: white;
+  padding: 0.8vh 1vw;
+  border-radius: 0.4rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: 0.1rem solid black;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  width: auto;
+  display: inline-block;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.edit-event {
+  margin-right: 1vw;
+}

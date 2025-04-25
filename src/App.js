@@ -10,6 +10,7 @@ import ClubsPage from './pages/clubsPage';
 import PostPage from './pages/postPage';
 import MyEvent from './pages/myEvent';
 import CreateEvent from './pages/createEvent';
+import EditEvent from './pages/EditEvent';
 
 import User from './pages/user';
 
@@ -34,7 +35,6 @@ function AppContent() {
   return (
     <>
       {!hideHeaderFooter && <Header />}
-
       <Routes>
         <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
         <Route path="/clubsPage" element={<RequireAuth><ClubsPage /></RequireAuth>} />
@@ -49,6 +49,7 @@ function AppContent() {
         <Route path="/createClub" element={<RequireAuth><CreateClub /></RequireAuth>} />
         <Route path="/createPost" element={<RequireAuth><CreatePost /></RequireAuth>} />
         <Route path="/createEvent" element={<RequireAuth><CreateEvent /></RequireAuth>} />
+        <Route path="/editEvent/:id" element={<RequireAuth><EditEvent /></RequireAuth>} />
       </Routes>
 
       {!hideHeaderFooter && <Footer />}

@@ -2,37 +2,42 @@ import React, { useContext, useState } from 'react';
 import '../styles/login.css';
 import utdLogo from '../assets/utd-logo1.png';
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../firebase';
+import { auth, db } from '../firebase'; // Import db
 import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
+import { getDoc, doc } from 'firebase/firestore'; // Import Firestore functions
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
+    const { dispatch } = useContext(AuthContext);
 
-  const navigate = useNavigate();
+    const handleSubmit = (event) => {
+        event.preventDefault();
 
-  const {dispatch} = useContext(AuthContext);
+        signInWithEmailAndPassword(auth, email, password)
+            .then(async (userCredential) => { // Make the callback async
+                const user = userCredential.user;
+                const userDocRef = doc(db, 'Users', user.uid);
+                const userDoc = await getDoc(userDocRef);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    
-    signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            dispatch({type: "LOGIN", payload: user});
-            navigate('/');
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.error('Login error:', errorCode, errorMessage);
-          setError(errorMessage);
-        });
-
-  };
+                if (userDoc.exists()) {
+                    const userData = userDoc.data();
+                    dispatch({ type: "LOGIN", payload: { ...user, displayName: userData.displayName } }); // Merge displayName
+                } else {
+                    dispatch({ type: "LOGIN", payload: user }); // Or handle this case appropriately
+                }
+                navigate('/');
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.error('Login error:', errorCode, errorMessage);
+                setError(errorMessage);
+            });
+    };
 
   return (
     <div className="login-container">

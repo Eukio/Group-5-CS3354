@@ -16,7 +16,7 @@ function User() {
                 </div>
                 <div class="profile">
                    <p><strong>Name:</strong> {currentUser?.displayName || 'User'}</p>
-                   <p><strong>Email ID:</strong> yourcontact@utdallas.edu</p>
+                   <p><strong>Email ID:</strong> {currentUser?.email || 'Email@utdallas.edu'}</p>
                 </div>
             </div>
             <div className="joined-clubs">
