@@ -1,0 +1,13 @@
+.post-main-heading{
+  position: relative;
+  margin-top:2%;
+  width: 100%
+}
+.main-text{
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  font-family: "NotoSansTeluguUi-Bold", sans-serif;
+  font-weight: 700;
+}
