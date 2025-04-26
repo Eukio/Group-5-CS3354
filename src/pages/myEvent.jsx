@@ -14,8 +14,8 @@ function MyEvent() {
         const fetchEvents = async () => {
             if (!currentUser) return;
 
-            const postsCollection = collection(db, 'Events'); // Changed from 'Events' to 'Posts'
-            const q = query(postsCollection, where('creatorId', '==', currentUser.uid)); // Changed from 'creatorId' to 'organizerId'
+            const postsCollection = collection(db, 'Events');
+            const q = query(postsCollection, where('creatorId', '==', currentUser.uid));
 
             try {
                 const querySnapshot = await getDocs(q);
@@ -37,49 +37,92 @@ function MyEvent() {
     };
 
     const handleClick2 = (id) => {
-        navigate(`/editEvent/${id}`); // Navigate to the EditEvent page
+        navigate(`/editEvent/${id}`);
     };
 
     const handleClick3 = async (id) => {
         try {
             await deleteDoc(doc(db, 'Events', id));
-            setEvents(events.filter(event => event.id !== id)); // Update local state
-            //alert("Event deleted successfully!");
+            setEvents(events.filter(event => event.id !== id));
         } catch (error) {
             console.error("Error deleting event:", error);
-            //alert("Error deleting event.");
         }
     };
 
     const getPossessiveUserName = (displayName) => {
-        if (!displayName) return "User's"; // Default if no name
+        if (!displayName) return "User's";
         const lastChar = displayName.slice(-1).toLowerCase();
-        if (lastChar === 's') {
-            return `${displayName}'`;
-        } else {
-            return `${displayName}'s`;
-        }
+        return lastChar === 's' ? `${displayName}'` : `${displayName}'s`;
+    };
+
+    const isFutureEvent = (eventDate) => {
+        const today = new Date();
+        const eventDateObj = new Date(eventDate);
+        today.setHours(0, 0, 0, 0);
+        eventDateObj.setHours(0, 0, 0, 0);
+        return eventDateObj >= today;
+    };
+
+    const futureEvents = events
+        .filter(event => isFutureEvent(event.date))
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    const pastEvents = events
+        .filter(event => !isFutureEvent(event.date))
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    const formatDate = (dateString) => {
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        return new Date(dateString + 'T00:00:00').toLocaleDateString(undefined, options);
     };
 
     return (
-        <div className="page" >
+        <div className="page">
             <div className="main-event-heading">
-                <h1>{getPossessiveUserName(currentUser?.displayName) || 'User'} Events</h1>
+                <h1>{getPossessiveUserName(currentUser?.displayName)} Events</h1>
             </div>
+
             <div className="joined-events">
-                {events.map(event => (
-                    <div className="my-event" key={event.id}>
-                        <div className="event-details">
-                            {event.date}: {event.description}
-                        </div>
-                        <div className="event-actions">
-                            <button onClick={() => handleClick2(event.id)} className="edit-event"> Edit Event </button>
-                            <button onClick={() => handleClick3(event.id)} className="delete-event"> Delete Event </button>
-                        </div>
+                {futureEvents.length > 0 ? (
+                    <div className="event-card-wrapper">
+                        {futureEvents.map(event => (
+                            <div className="my-event" key={event.id}>
+                                <div className="event-details">
+                                    {formatDate(event.date)}: {event.description}
+                                </div>
+                                <div className="event-actions">
+                                    <button onClick={() => handleClick2(event.id)} className="edit-event">Edit Event</button>
+                                    <button onClick={() => handleClick3(event.id)} className="delete-event">Delete Event</button>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                ))}
+                ) : (
+                    <div className="no-events-wrapper">
+                        <p className="no-events-message">No upcoming events yet!</p>
+                    </div>
+                )}
             </div>
-            <button onClick={handleClick1} className="create-event"> Create Event </button>
+
+            {pastEvents.length > 0 && (
+                <div className="past-events-section">
+                    <h2 className="past-heading">Past Events</h2>
+                    <div className="event-card-wrapper">
+                        {pastEvents.map(event => (
+                            <div className="my-event past-event" key={event.id}>
+                                <div className="event-details">
+                                    {formatDate(event.date)}: {event.description}
+                                </div>
+                                <div className="event-actions">
+                                    <button onClick={() => handleClick3(event.id)} className="delete-event">Delete Event</button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            <button onClick={handleClick1} className="create-event">Create Event</button>
         </div>
     );
 }
