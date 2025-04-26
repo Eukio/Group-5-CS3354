@@ -34,29 +34,31 @@ function AppContent() {
   const hideHeaderFooter = location.pathname === '/login' || location.pathname === '/register';
 
   return (
-    <>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       {!hideHeaderFooter && <Header />}
-      <Routes>
-        <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
-        <Route path="/clubsPage" element={<RequireAuth><ClubsPage /></RequireAuth>} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/club/:id" element={<ClubDetails />} />
-        <Route path="/user" element={<User />} />
-        <Route path="/myClub" element={<MyClub />} />
-        <Route path="/myEvent" element={<MyEvent />} />
-        <Route path="/myPost" element={<MyPost />} />
-        <Route path="/postPage" element={<PostPage />} />
-        <Route path="/home" element={<RequireAuth><Home /></RequireAuth>} />
-        <Route path="/createClub" element={<RequireAuth><CreateClub /></RequireAuth>} />
-        <Route path="/createPost" element={<RequireAuth><CreatePost /></RequireAuth>} />
-        <Route path="/createEvent" element={<RequireAuth><CreateEvent /></RequireAuth>} />
-        <Route path="/editEvent/:id" element={<RequireAuth><EditEvent /></RequireAuth>} />
-      </Routes>
-
+      <div style={{ flex: 1 }}>
+        <Routes>
+          <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
+          <Route path="/clubsPage" element={<RequireAuth><ClubsPage /></RequireAuth>} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/club/:id" element={<ClubDetails />} />
+          <Route path="/user" element={<User />} />
+          <Route path="/myClub" element={<MyClub />} />
+          <Route path="/myEvent" element={<MyEvent />} />
+          <Route path="/myPost" element={<MyPost />} />
+          <Route path="/postPage" element={<PostPage />} />
+          <Route path="/home" element={<RequireAuth><Home /></RequireAuth>} />
+          <Route path="/createClub" element={<RequireAuth><CreateClub /></RequireAuth>} />
+          <Route path="/createPost" element={<RequireAuth><CreatePost /></RequireAuth>} />
+          <Route path="/createEvent" element={<RequireAuth><CreateEvent /></RequireAuth>} />
+          <Route path="/editEvent/:id" element={<RequireAuth><EditEvent /></RequireAuth>} />
+        </Routes>
+      </div>
       {!hideHeaderFooter && <Footer />}
-    </>
+    </div>
   );
+  
 }
 
 function App() {
