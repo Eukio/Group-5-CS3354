@@ -1,6 +1,6 @@
-import utdLLC from '../assets/createClub.svg';
-import sciences from '../assets/createPost.svg';
-import atec from '../assets/createEvent.svg';
+import utdLLC from './createClub.svg';
+import sciences from './createPost.svg';
+import atec from './createEvent.svg';
 
 const clubsData = [
   { id: 1, name: "Chess Club", image: utdLLC },
