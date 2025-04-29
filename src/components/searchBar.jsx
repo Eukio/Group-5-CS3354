@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { collection, query, orderBy, getDocs } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useNavigate } from 'react-router-dom'; 
+import '../styles/headerAndFooter.css';
 
 const SearchBar = () => {
   const [queryText, setQueryText] = useState('');
@@ -69,7 +70,12 @@ const SearchBar = () => {
       {results.length > 0 && (
         <ul className="dropdown-results">
           {results.map((club) => (
-            <li key={club.id} className="dropdown-item">
+            <li key={club.id} className="dropdown-item"
+            onClick={() => {
+              navigate(`/club/${club.id}`);
+              setQueryText('');
+              setResults([]);
+            }}>
               {club.name}
             </li>
           ))}
