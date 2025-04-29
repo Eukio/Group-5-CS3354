@@ -1,65 +1,49 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { db } from '../firebase';
+import { collection, getDocs } from 'firebase/firestore';
 import "../styles/postPage.css";
-import chess_post from '../assets/chess-post.png';
-import art_post from '../assets/art-post.png';
-import debate_post from '../assets/debate-post.png';
-import eco_post from '../assets/eco-post.png';
-import stem_post from '../assets/STEM-post.png';
-import women_post from '../assets/women-networking-post.png';
 
 function PostPage() {
     const navigate = useNavigate();
+    const [posts, setPosts] = useState([]);
+
     const handleClick1 = () => {
         navigate('/explore');
     };
 
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const postsCollection = collection(db, 'Posts');
+                const postsSnapshot = await getDocs(postsCollection);
+                const postsList = postsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                setPosts(postsList);
+            } catch (error) {
+                console.error("Error fetching posts:", error);
+            }
+        };
+
+        fetchPosts();
+    }, []);
+
     return (
         <div className="page">
-            <div className = "post-main-heading">
-                <h1> Popular Posts </h1>
+            <div className="post-main-heading">
+                <h1>Popular Posts</h1>
             </div>
             <div className="all-posts">
-                <div className="added-post">
-                    <div className="image-wrapper">
-                        <img src={chess_post} alt="Post1" className="post-image" />
-                      </div>
-
-                </div>
-                <div className="added-post">
-                    <div className="image-wrapper">
-                        <img src={art_post} alt="Post2" className="post-image" />
+                {posts.map((post) => (
+                    <div key={post.id} className="added-post">
+                        <div className="image-wrapper">
+                            <img src={post.postImgUrl} alt={post.title || "Post"} className="post-image" />
+                        </div>
+                        {post.title && <p className="post-title">{post.title}</p>}
                     </div>
-
-                </div>
-                <div className="added-post">
-                    <div className="image-wrapper">
-                        <img src={debate_post} alt="Post3" className="post-image" />
-                    </div>
-
-                </div>
-                <div className="added-post">
-                    <div className="image-wrapper">
-                        <img src={eco_post} alt="Post2" className="post-image" />
-                    </div>
-
-                </div>
-                <div className="added-post">
-                    <div className="image-wrapper">
-                        <img src={stem_post} alt="Post2" className="post-image" />
-                    </div>
-
-                    </div>
-                <div className="added-post">
-                    <div className="image-wrapper">
-                        <img src={women_post} alt="Post2" className="post-image" />
-                    </div>
-
-                </div>
+                ))}
             </div>
         </div>
     );
 }
 
 export default PostPage;
-//<button onClick={handleClick1}> Explore </button>
