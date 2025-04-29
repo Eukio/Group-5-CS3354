@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { collection, query, where, getDocs } from 'firebase/firestore';
+import { collection, query, orderBy, getDocs } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useNavigate } from 'react-router-dom'; 
 
@@ -9,7 +9,8 @@ const SearchBar = () => {
   
   const navigate = useNavigate();
   const search = async (text) => {
-    if (!text.trim()) {
+    const trimmedText = text.trim();
+    if (!trimmedText) {
       setResults([]);
       return;
     }
@@ -17,21 +18,17 @@ const SearchBar = () => {
     try {
       const collectionRef = collection(db, 'Clubs');
 
-      const q = query(
-        collectionRef,
-        where('name', '>=', text),
-        where('name', '<=', text + '\uf8ff') 
-      );
+      const q = query(collectionRef,orderBy('name'));
 
       const querySnapshot = await getDocs(q);
 
       // Map the results into an array
       const res = [];
       querySnapshot.forEach((doc) => {
-        res.push({
-          id: doc.id,
-          ...doc.data(),
-        });
+        const club = { id: doc.id, ...doc.data() };
+        if (club.name.toLowerCase().includes(trimmedText.toLowerCase())) {
+          res.push(club);
+        }
       });
 
       setResults(res);
