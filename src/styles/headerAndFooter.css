@@ -52,18 +52,19 @@
   gap: 1rem;
 }
 
+/* === Search Bar Styles === */
+
 .search-bar {
   position: relative;
-  width: 100%;
-  max-width: 300px;
-  margin: 16px auto;
+  width: 250px; /* Fixed width */
+  margin: 16px auto; /* Prevent extra vertical spacing */
 }
 
 .search-input {
   width: 100%;
-  padding: 8px 10px 6px 4px;
+  padding: 8px 14px; /* Equal horizontal padding */
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 8px 8px 8px 8px; /* Rounded top only */
   font-size: 0.95rem;
   color: #000;
   background-color: #fff;
@@ -80,28 +81,43 @@
   box-shadow: 0 0 6px rgba(0, 119, 255, 0.4);
 }
 
-
-
-.dropdown-results{
-  width: 100%;
+.dropdown-results {
   position: absolute;
-  top: 100%; /* directly below the input */
+  top: 100%; /* Appears right below input */
   left: 0;
-  right: 0;
-  color: #000;
+  width: 100%; /* Match search bar width */
   background: #fff;
   border: 1px solid #ccc;
   border-top: none;
-  border-radius: 0 0 8px 8px;
+  border-radius: 8px 8px 8px 8px; /* Rounded bottom only */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   max-height: 200px;
   overflow-y: auto;
   z-index: 10;
   font-size: 0.95rem;
-  margin: 0;
-  padding: 0 13px 0 0;
-  list-style: none;
+  margin: auto;
+  padding: 8px 14px;
+  list-style: none; /* ✅ Removes bullet points */
 }
+
+.dropdown-results::-webkit-scrollbar {
+  width: 6px; /* Width of the vertical scrollbar */
+}
+
+.dropdown-results::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track background */
+  border-radius: 8px;
+}
+
+.dropdown-results::-webkit-scrollbar-thumb {
+  background: #4a4a4a; /* Scroll thumb */
+  border-radius: 8px;
+}
+
+.dropdown-results::-webkit-scrollbar-thumb:hover {
+  background: #999; /* Thumb on hover */
+}
+
 
 .dropdown-item {
   padding: 10px 14px;
@@ -109,6 +125,7 @@
   color: #000;
   transition: background-color 0.2s;
 }
+
 .dropdown-item:hover {
   background-color: #f5f5f5;
 }

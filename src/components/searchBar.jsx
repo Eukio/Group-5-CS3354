@@ -47,7 +47,8 @@ const SearchBar = () => {
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
             e.preventDefault(); 
-            if (results.length > 0 || queryText.equals(results[0].name)) {
+            if (results.length > 0 && queryText.toLowerCase() === results[0].name.toLowerCase())
+            {
               navigate(`/club/${results[0].id}`);
             }
           }
