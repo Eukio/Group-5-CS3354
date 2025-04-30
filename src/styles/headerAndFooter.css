@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Left Section: Title */
@@ -49,7 +50,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 /* === Search Bar Styles === */
@@ -66,9 +67,9 @@
   border: 1px solid #ccc;
   border-radius: 8px 8px 8px 8px; /* Rounded top only */
   font-size: 0.95rem;
-  color: #000;
-  background-color: #fff;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  color: #000 !important;
+  background-color: #fff !important;
+  transition: all 0.3s ease;
 }
 
 .search-input::placeholder {
@@ -76,10 +77,21 @@
 }
 
 .search-input:focus {
+  background-color: #fff !important;
   border-color: #0077ff;
   outline: none;
   box-shadow: 0 0 6px rgba(0, 119, 255, 0.4);
+  transform: scale(1.05);
+  transition: all 0.2s ease;
 }
+
+input.search-input:-webkit-autofill {
+  background-color: #fff !important;
+  box-shadow: 0 0 0px 1000px #fff inset !important;
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 5000s ease-in-out 0s; /* prevent autofill flash */
+}
+
 
 .dropdown-results {
   position: absolute;
