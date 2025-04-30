@@ -10,33 +10,38 @@ const SearchBar = () => {
   
   const navigate = useNavigate();
   const search = async (text) => {
-    const trimmedText = text.trim();
+    const trimmedText = text.trim().toLowerCase();
     if (!trimmedText) {
       setResults([]);
       return;
     }
-
+  
     try {
       const collectionRef = collection(db, 'Clubs');
-
-      const q = query(collectionRef,orderBy('name'));
-
+      const q = query(collectionRef, orderBy('name'));
       const querySnapshot = await getDocs(q);
-
-      // Map the results into an array
-      const res = [];
+  
+      const startsWithMatches = [];
+      const includesMatches = [];
+  
       querySnapshot.forEach((doc) => {
         const club = { id: doc.id, ...doc.data() };
-        if (club.name.toLowerCase().includes(trimmedText.toLowerCase())) {
-          res.push(club);
+        const name = club.name || '';
+        const nameLower = name.toLowerCase();
+  
+        if (nameLower.startsWith(trimmedText)) {
+          startsWithMatches.push(club);
+        } else if (nameLower.includes(trimmedText)) {
+          includesMatches.push(club);
         }
       });
-
-      setResults(res);
+  
+      setResults([...startsWithMatches, ...includesMatches]);
     } catch (error) {
       console.error('Error fetching clubs:', error);
     }
   };
+  
 
   const handleInputChange = (e) => {
     const text = e.target.value;
