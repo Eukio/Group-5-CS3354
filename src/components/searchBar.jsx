@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { collection, query, orderBy, getDocs } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useNavigate } from 'react-router-dom'; 
+import '../styles/headerAndFooter.css';
 
 const SearchBar = () => {
   const [queryText, setQueryText] = useState('');
@@ -9,33 +10,38 @@ const SearchBar = () => {
   
   const navigate = useNavigate();
   const search = async (text) => {
-    const trimmedText = text.trim();
+    const trimmedText = text.trim().toLowerCase();
     if (!trimmedText) {
       setResults([]);
       return;
     }
-
+  
     try {
       const collectionRef = collection(db, 'Clubs');
-
-      const q = query(collectionRef,orderBy('name'));
-
+      const q = query(collectionRef, orderBy('name'));
       const querySnapshot = await getDocs(q);
-
-      // Map the results into an array
-      const res = [];
+  
+      const startsWithMatches = [];
+      const includesMatches = [];
+  
       querySnapshot.forEach((doc) => {
         const club = { id: doc.id, ...doc.data() };
-        if (club.name.toLowerCase().includes(trimmedText.toLowerCase())) {
-          res.push(club);
+        const name = club.name || '';
+        const nameLower = name.toLowerCase();
+  
+        if (nameLower.startsWith(trimmedText)) {
+          startsWithMatches.push(club);
+        } else if (nameLower.includes(trimmedText)) {
+          includesMatches.push(club);
         }
       });
-
-      setResults(res);
+  
+      setResults([...startsWithMatches, ...includesMatches]);
     } catch (error) {
       console.error('Error fetching clubs:', error);
     }
   };
+  
 
   const handleInputChange = (e) => {
     const text = e.target.value;
@@ -46,7 +52,8 @@ const SearchBar = () => {
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
             e.preventDefault(); 
-            if (results.length > 0 || queryText.equals(results[0].name)) {
+            if (results.length > 0 && queryText.toLowerCase() === results[0].name.toLowerCase())
+            {
               navigate(`/club/${results[0].id}`);
             }
           }
@@ -69,7 +76,12 @@ const SearchBar = () => {
       {results.length > 0 && (
         <ul className="dropdown-results">
           {results.map((club) => (
-            <li key={club.id} className="dropdown-item">
+            <li key={club.id} className="dropdown-item"
+            onClick={() => {
+              navigate(`/club/${club.id}`);
+              setQueryText('');
+              setResults([]);
+            }}>
               {club.name}
             </li>
           ))}

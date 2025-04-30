@@ -22,20 +22,20 @@ function Home() {
       </section>
 
       <section className="cards">
-        <div className="card">
+        <div className="card" onClick={() => navigate('/myClub')}>
           <img src={createClub} alt="Create Club" />
           <h2>Create Club</h2>
-          <button onClick={() => navigate('/myClub')}>Create</button>
+          <button>Create</button>
         </div>
-        <div className="card">
+        <div className="card" onClick={() => navigate('/myPost')}>
           <img src={createPost} alt="Create Post" />
           <h2>Create a Post</h2>
-          <button onClick={() => navigate('/myPost')}>Post</button>
+          <button>Post</button>
         </div>
-        <div className="card">
+        <div className="card" onClick={() => navigate('/myEvent')}>
           <img src={createEvent} alt="Create Event" />
           <h2>Create an Event</h2>
-          <button onClick={() => navigate('/myEvent')}>Create</button>
+          <button>Create</button>
         </div>
       </section>
 
