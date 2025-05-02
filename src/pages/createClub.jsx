@@ -47,7 +47,7 @@ function CreateClub() {
 
       const newClubRef = await addDoc(clubsCollection, clubData);
       console.log('Club created successfully! Club ID:', newClubRef.id);
-      navigate('/myClub');
+      navigate('/');
     } catch (err) {
       console.error('Error creating club:', err);
       setError(err.message);

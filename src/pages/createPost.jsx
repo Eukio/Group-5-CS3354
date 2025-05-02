@@ -43,7 +43,7 @@ function CreatePost() {
   
         const newPostRef = await addDoc(postsCollection, postData);
         console.log('Post created successfully! Post ID:', newPostRef.id);
-        navigate('/myPost');
+        navigate('/');
       } catch (err) {
         console.error('Error creating club:', err);
         setError(err.message);
