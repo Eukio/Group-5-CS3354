@@ -10,11 +10,20 @@ import createEvent from '../assets/createEvent.svg';
 
 function Home() {
   const navigate = useNavigate();
+  const handleClick1 = () => {
+          navigate('/postPage');
+      };
+  const handleClick2 = () => {
+          navigate('/clubsPage');
+      };
   const { currentUser } = useContext(AuthContext);
 
   return (
     <div className="home-page">
-     
+        <div className="Link_page">
+            <div class="post_page" onClick={handleClick1}>Posts</div>
+            <div class="club_page" onClick={handleClick2}>Clubs</div>
+        </div>
 
       <section className="banner">
         <h1>Welcome, {currentUser?.displayName || 'User'}!</h1>
