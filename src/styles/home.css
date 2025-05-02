@@ -92,13 +92,13 @@
   margin-top: 2%;
   margin-left: 4%;
   margin-right: 4%;
-   gap: 10%;
-   font-size: 26px;
-   align-items: center;
-   justify-content: center;
-   display: flex;
-   margin-bottom: 1%;
-   cursor: pointer;
+  gap: 10%;
+  font-size: 26px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 1%;
+  cursor: pointer;
 
 }
 .post_page {
